@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر اليسر - تواصل معنا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300..900&display=swap');
+        body{font-family:'Cairo',sans-serif;text-align:center;background:linear-gradient(135deg,#4CAF50,#388E3C);padding:20px;margin:0;display:flex;justify-content:center;align-items:center;min-height:100vh;}
+        .splash-screen{position:fixed;top:0;left:0;width:100%;height:100%;background:white;display:flex;justify-content:center;align-items:center;transition:opacity 1s ease-out;z-index:1000;}
+        .splash-screen img{width:150px;opacity:0;animation:fadeInOut 2.5s ease-in-out;}
+        @keyframes fadeInOut{0%{opacity:0;}50%{opacity:1;}100%{opacity:0;}}
+        .container{max-width:600px;width:90%;background:white;padding:30px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.2);animation:fadeIn 1s ease-in-out;}
+        .header{background:#4CAF50;color:white;padding:15px;border-radius:10px;font-size:24px;font-weight:bold;display:flex;align-items:center;justify-content:center;gap:10px;}
+        .header i{font-size:28px;}
+        .social-list{list-style:none;padding:0;margin:20px 0;}
+        .social-list li{margin:10px 0;padding:15px;border-radius:8px;transition:0.3s;display:flex;align-items:center;background:#f5f5f5;cursor:pointer;border:none;}
+        .social-list a{text-decoration:none;color:#333;display:flex;align-items:center;font-size:20px;font-weight:bold;width:100%;}
+        .social-list i{font-size:26px;width:45px;text-align:center;margin-right:12px;}
+        .fa-facebook{color:#1877F2;}.fa-telegram{color:#0088CC;}.fa-tiktok{color:#000000;}.fa-instagram{color:#E1306C;}.fa-whatsapp{color:#25D366;}
+        .social-list li:hover{transform:scale(1.05);background:#A5D6A7;}
+        .action-container{display:flex;gap:20px;justify-content:center;}
+        .action-card{display:flex;align-items:center;justify-content:center;gap:12px;width:180px;height:60px;font-size:18px;font-weight:bold;color:white;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.15);transition:all 0.3s ease;cursor:pointer;position:relative;}
+        .share-card{background:linear-gradient(135deg,#ff7b00,#ff3d00);}
+        .whatsapp-card{background:linear-gradient(135deg,#25D366,#128C7E);}
+        .action-card:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,0.2);}
+        .action-card i{font-size:24px;margin-left:10px;}
+    </style>
+    <script>
+        function sharePage(){if(navigator.share){navigator.share({title:'متجر اليسر - تابعونا',text:'تعرف على أحدث العروض والمنتجات!',url:window.location.href}).catch(err=>console.log('Error sharing:',err));}else{alert('المشاركة غير مدعومة على هذا المتصفح.');}}
+    </script>
+</head>
+<body>
+    <div class="splash-screen"><img src="logo.png" alt="اليسر"></div>
+    <div class="container">
+        <div class="header"><i class="fas fa-shopping-bag"></i> تابعونا على مواقع التواصل</div>
+        <ul class="social-list">
+            <li><a href="https://www.facebook.com/share/1BNpkaSwiD/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://t.me/+Vjvhd5kJOPRmYzU0" target="_blank"><i class="fab fa-telegram"></i> Telegram</a></li>
+            <li><a href="https://www.tiktok.com/@elyosr.tgara?_t=8jFXyPqG2zz&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/elyosr.tgara/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://chat.whatsapp.com/K15KTGJOiOV0S6mLihNExx" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+        </ul>
+        <div class="action-container">
+            <div class="action-card share-card" onclick="sharePage();"><i class="fas fa-share-alt"></i><span>مشاركة</span></div>
+            <div class="action-card whatsapp-card" onclick="window.location.href='https://wa.me/201050868814';"><i class="fab fa-whatsapp"></i><span>استفسر الآن</span></div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){setTimeout(function(){document.querySelector(".splash-screen").style.opacity="0";setTimeout(function(){document.querySelector(".splash-screen").style.display="none";document.querySelector(".container").style.visibility="visible";document.querySelector(".container").style.opacity="1";},1000);},2500);});
+    </script>
+</body>
+</html>
